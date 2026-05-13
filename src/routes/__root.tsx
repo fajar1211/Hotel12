@@ -79,10 +79,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "An exclusive mountain sanctuary in Singkawang." },
       { property: "og:type", content: "website" },
     ],
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-    ],
     links: [
       {
         rel: "stylesheet",
@@ -115,7 +111,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <SiteLayout />
     </QueryClientProvider>
   );
 }
