@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import wedding from "@/assets/wedding.jpg";
-import meeting from "@/assets/meeting.jpg";
+import meeting from "@/assets/meeting-room.jpg";
 import { Check } from "lucide-react";
 
 export const Route = createFileRoute("/wedding-meeting")({

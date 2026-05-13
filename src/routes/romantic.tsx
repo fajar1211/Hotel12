@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import dinner from "@/assets/romantic-dinner.jpg";
-import room from "@/assets/room-deluxe.jpg";
+import room from "@/assets/honeymoon-setup.jpg";
 
 export const Route = createFileRoute("/romantic")({
   head: () => ({ meta: [
@@ -25,8 +25,8 @@ function Romantic() {
 
       {/* Honeymoon setup */}
       <section className="relative py-32 px-6 lg:px-20">
-        <img src={room} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy"/>
-        <div className="absolute inset-0 bg-ink/80"/>
+        <img src={room} alt="" className="absolute inset-0 w-full h-full object-cover opacity-50" loading="lazy"/>
+        <div className="absolute inset-0 bg-ink/70"/>
         <div className="relative max-w-4xl mx-auto text-center">
           <div className="text-xs tracking-[0.5em] uppercase text-gold mb-6">Signature Setup</div>
           <h2 className="serif text-5xl md:text-6xl text-cream">Honeymoon · Anniversary · Wedding Room Setup</h2>
