@@ -1,21 +1,38 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
-import room from "@/assets/room-deluxe.jpg";
+import twin from "@/assets/room-twin.jpg";
+import single from "@/assets/room-single.jpg";
+import interior from "@/assets/room-interior.jpg";
+import bath from "@/assets/room-bath.jpg";
 import { Check } from "lucide-react";
 
 export const Route = createFileRoute("/rooms")({
   head: () => ({ meta: [
     { title: "Rooms — Kurraya Hills" },
     { name: "description", content: "Deluxe Twin & Single mountain-view rooms at Kurraya Hills Singkawang." },
-    { property: "og:image", content: room },
+    { property: "og:title", content: "Rooms — Kurraya Hills" },
+    { property: "og:description", content: "Two carefully composed mountain-view room types." },
+    { property: "og:image", content: single },
   ]}),
   component: Rooms,
 });
 
 const ROOMS = [
-  { name: "Deluxe Twin Bed", view: "Mountain View", desc: "Two plush single beds dressed in linen, framed by floor-to-ceiling glass that opens to the hills." },
-  { name: "Deluxe Single Bed", view: "Mountain View", desc: "An intimate king-bed retreat with a private balcony and the same uninterrupted mountain panorama." },
+  {
+    img: single,
+    name: "Deluxe Single Bed",
+    view: "Mountain View",
+    desc: "An intimate king-bed retreat with a private balcony and an uninterrupted mountain panorama.",
+  },
+  {
+    img: twin,
+    name: "Deluxe Twin Bed",
+    view: "Garden View",
+    desc: "Two plush single beds dressed in linen, framed by floor-to-ceiling glass that opens to the gardens.",
+  },
 ];
+
+const GALLERY = [single, twin, interior, bath, single, interior, bath, twin];
 
 const PRICES = [
   { label: "Weekday", price: "600", note: "Sun – Thu" },
@@ -26,14 +43,14 @@ const PRICES = [
 function Rooms() {
   return (
     <>
-      <PageHero image={room} eyebrow="Stay With Us" title="Mountain View Rooms" subtitle="Two carefully composed room types — both crowned with the same view that made us build here." />
+      <PageHero image={interior} eyebrow="Stay With Us" title="Mountain View Rooms" subtitle="Two carefully composed room types — both crowned with the same view that made us build here." />
 
       <section className="py-32 px-6 lg:px-20 max-w-[1600px] mx-auto">
         <div className="grid md:grid-cols-2 gap-10">
-          {ROOMS.map((r, i) => (
-            <div key={i} className="group">
+          {ROOMS.map((r) => (
+            <div key={r.name} className="group">
               <div className="relative h-[520px] overflow-hidden">
-                <img src={room} alt={r.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s]" loading="lazy" />
+                <img src={r.img} alt={r.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s]" loading="lazy" />
                 <div className="absolute top-6 left-6 px-4 py-2 bg-ink/80 backdrop-blur text-[0.65rem] tracking-[0.3em] uppercase text-gold">{r.view}</div>
               </div>
               <div className="pt-8">
@@ -47,6 +64,29 @@ function Rooms() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Horizontal scroll gallery */}
+      <section className="pb-32">
+        <div className="px-6 lg:px-20 max-w-[1600px] mx-auto mb-10 flex items-end justify-between">
+          <div>
+            <div className="text-xs tracking-[0.5em] uppercase text-gold mb-4">— Inside The Rooms</div>
+            <h2 className="serif text-4xl md:text-5xl text-cream">A closer look</h2>
+          </div>
+          <div className="hidden md:block text-xs tracking-[0.3em] uppercase text-cream/40">← scroll →</div>
+        </div>
+        <div className="overflow-x-auto scroll-smooth snap-x snap-mandatory">
+          <div className="flex gap-6 px-6 lg:px-20 pb-6">
+            {GALLERY.map((g, i) => (
+              <figure key={i} className="snap-start shrink-0 w-[80vw] md:w-[55vw] lg:w-[40vw] h-[60vh] relative overflow-hidden group">
+                <img src={g} alt={`Room detail ${i+1}`} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s]" loading="lazy"/>
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-ink/80 to-transparent p-6">
+                  <div className="text-[0.65rem] tracking-[0.4em] uppercase text-gold">0{i+1} / 0{GALLERY.length}</div>
+                </div>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 

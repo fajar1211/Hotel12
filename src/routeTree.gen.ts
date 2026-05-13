@@ -12,7 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WeddingMeetingRouteImport } from './routes/wedding-meeting'
 import { Route as RoomsRouteImport } from './routes/rooms'
 import { Route as RomanticRouteImport } from './routes/romantic'
-import { Route as RestaurantRouteImport } from './routes/restaurant'
+import { Route as RestaurantPoolRouteImport } from './routes/restaurant-pool'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -32,9 +32,9 @@ const RomanticRoute = RomanticRouteImport.update({
   path: '/romantic',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RestaurantRoute = RestaurantRouteImport.update({
-  id: '/restaurant',
-  path: '/restaurant',
+const RestaurantPoolRoute = RestaurantPoolRouteImport.update({
+  id: '/restaurant-pool',
+  path: '/restaurant-pool',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -57,7 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/restaurant': typeof RestaurantRoute
+  '/restaurant-pool': typeof RestaurantPoolRoute
   '/romantic': typeof RomanticRoute
   '/rooms': typeof RoomsRoute
   '/wedding-meeting': typeof WeddingMeetingRoute
@@ -66,7 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/restaurant': typeof RestaurantRoute
+  '/restaurant-pool': typeof RestaurantPoolRoute
   '/romantic': typeof RomanticRoute
   '/rooms': typeof RoomsRoute
   '/wedding-meeting': typeof WeddingMeetingRoute
@@ -76,7 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/restaurant': typeof RestaurantRoute
+  '/restaurant-pool': typeof RestaurantPoolRoute
   '/romantic': typeof RomanticRoute
   '/rooms': typeof RoomsRoute
   '/wedding-meeting': typeof WeddingMeetingRoute
@@ -87,7 +87,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/restaurant'
+    | '/restaurant-pool'
     | '/romantic'
     | '/rooms'
     | '/wedding-meeting'
@@ -96,7 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/restaurant'
+    | '/restaurant-pool'
     | '/romantic'
     | '/rooms'
     | '/wedding-meeting'
@@ -105,7 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/restaurant'
+    | '/restaurant-pool'
     | '/romantic'
     | '/rooms'
     | '/wedding-meeting'
@@ -115,7 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  RestaurantRoute: typeof RestaurantRoute
+  RestaurantPoolRoute: typeof RestaurantPoolRoute
   RomanticRoute: typeof RomanticRoute
   RoomsRoute: typeof RoomsRoute
   WeddingMeetingRoute: typeof WeddingMeetingRoute
@@ -144,11 +144,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RomanticRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/restaurant': {
-      id: '/restaurant'
-      path: '/restaurant'
-      fullPath: '/restaurant'
-      preLoaderRoute: typeof RestaurantRouteImport
+    '/restaurant-pool': {
+      id: '/restaurant-pool'
+      path: '/restaurant-pool'
+      fullPath: '/restaurant-pool'
+      preLoaderRoute: typeof RestaurantPoolRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -179,7 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  RestaurantRoute: RestaurantRoute,
+  RestaurantPoolRoute: RestaurantPoolRoute,
   RomanticRoute: RomanticRoute,
   RoomsRoute: RoomsRoute,
   WeddingMeetingRoute: WeddingMeetingRoute,

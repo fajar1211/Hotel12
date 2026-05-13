@@ -7,6 +7,7 @@ import wedding from "@/assets/wedding.jpg";
 import pool from "@/assets/pool.jpg";
 import restaurant from "@/assets/restaurant.jpg";
 import meeting from "@/assets/meeting.jpg";
+import honeymoon from "@/assets/honeymoon-setup.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -112,8 +113,8 @@ function Home() {
               { img: dinner, title: "Romantic Dining", to: "/romantic", price: "from Rp 350K" },
               { img: wedding, title: "Dream Weddings", to: "/wedding-meeting", price: "Bespoke" },
               { img: meeting, title: "Executive Meetings", to: "/wedding-meeting", price: "from Rp 120K" },
-              { img: restaurant, title: "Restaurant", to: "/restaurant", price: "À la carte" },
-              { img: pool, title: "Hill Pool", to: "/restaurant", price: "from Rp 20K" },
+              { img: restaurant, title: "Restaurant", to: "/restaurant-pool", price: "À la carte" },
+              { img: pool, title: "Hill Pool", to: "/restaurant-pool", price: "from Rp 20K" },
             ].map((e, i) => (
               <Link key={i} to={e.to} className="group relative h-[480px] overflow-hidden block">
                 <img src={e.img} alt={e.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" loading="lazy" />
@@ -131,8 +132,8 @@ function Home() {
 
       {/* Honeymoon banner */}
       <section className="relative h-[70vh] overflow-hidden">
-        <img src={dinner} alt="" className="absolute inset-0 w-full h-full object-cover animate-ken-burns" loading="lazy"/>
-        <div className="absolute inset-0 bg-ink/70" />
+        <img src={honeymoon} alt="Honeymoon setup" className="absolute inset-0 w-full h-full object-cover animate-ken-burns" loading="lazy"/>
+        <div className="absolute inset-0 bg-ink/60" />
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
           <div className="text-xs tracking-[0.5em] uppercase text-gold mb-6">Signature Setup</div>
           <h2 className="serif text-5xl md:text-7xl text-cream max-w-4xl">Honeymoon · Anniversary · Wedding Setup</h2>

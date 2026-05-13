@@ -4,10 +4,12 @@ import restaurant from "@/assets/restaurant.jpg";
 import pool from "@/assets/pool.jpg";
 import dinner from "@/assets/romantic-dinner.jpg";
 
-export const Route = createFileRoute("/restaurant")({
+export const Route = createFileRoute("/restaurant-pool")({
   head: () => ({ meta: [
-    { title: "Restaurant & Facilities — Kurraya Hills" },
-    { name: "description", content: "Signature menu, pool, and exclusive facilities at Kurraya Hills Singkawang." },
+    { title: "Restaurant & Pool — Kurraya Hills" },
+    { name: "description", content: "Signature menu and Hill Pool at Kurraya Hills Singkawang." },
+    { property: "og:title", content: "Restaurant & Pool — Kurraya Hills" },
+    { property: "og:description", content: "Heritage flavors and a hilltop pool above Singkawang." },
     { property: "og:image", content: restaurant },
   ]}),
   component: Page,
@@ -34,7 +36,7 @@ const MENU = {
 function Page() {
   return (
     <>
-      <PageHero image={restaurant} eyebrow="Restaurant & Facilities" title="A Table In The Clouds" subtitle="Heritage flavors, modern composition, ingredients shaped by the hills." />
+      <PageHero image={restaurant} eyebrow="Restaurant & Pool" title="A Table In The Clouds" subtitle="Heritage flavors, modern composition, ingredients shaped by the hills." />
 
       {/* Menu */}
       <section className="py-32 px-6 lg:px-20 max-w-[1400px] mx-auto">
@@ -82,21 +84,6 @@ function Page() {
               <div className="serif text-5xl gradient-gold-text mt-2">30K</div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Facilities */}
-      <section className="py-32 px-6 lg:px-20 max-w-[1400px] mx-auto">
-        <div className="text-center mb-16">
-          <div className="text-xs tracking-[0.5em] uppercase text-gold mb-4">— Facilities</div>
-          <h2 className="serif text-5xl text-cream">Everything within reach</h2>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {["Hill Pool","Garden Lounge","Spa Cabanas","Kids Aqua Play","Sunset Terrace","Private Gazebo","Boutique Café","Hilltop Yoga"].map(f => (
-            <div key={f} className="border border-gold/20 p-8 text-center hover:bg-gold/5 transition">
-              <div className="serif text-xl text-cream">{f}</div>
-            </div>
-          ))}
         </div>
       </section>
 
