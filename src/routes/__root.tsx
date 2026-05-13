@@ -75,9 +75,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Kurraya Hills Singkawang — Mountain View Luxury Resort" },
       { name: "description", content: "Kurraya Hills Singkawang. Ultra-premium mountain-view resort: deluxe rooms, romantic dining, dream weddings, and exclusive facilities." },
-      { property: "og:title", content: "Kurraya Hills Singkawang" },
-      { property: "og:description", content: "An exclusive mountain sanctuary in Singkawang." },
+      { property: "og:title", content: "Kurraya Hills Singkawang — Mountain View Luxury Resort" },
+      { property: "og:description", content: "Kurraya Hills Singkawang. Ultra-premium mountain-view resort: deluxe rooms, romantic dining, dream weddings, and exclusive facilities." },
       { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Kurraya Hills Singkawang — Mountain View Luxury Resort" },
+      { name: "twitter:description", content: "Kurraya Hills Singkawang. Ultra-premium mountain-view resort: deluxe rooms, romantic dining, dream weddings, and exclusive facilities." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d583e0da-0c77-4e70-b9b6-1422885e54d5/id-preview-3b093dd3--f175f29a-8677-447a-a137-2130e4eebe7b.lovable.app-1778669334262.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d583e0da-0c77-4e70-b9b6-1422885e54d5/id-preview-3b093dd3--f175f29a-8677-447a-a137-2130e4eebe7b.lovable.app-1778669334262.png" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
