@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: oklch(0.78 0.13 78);
+  --gold-soft: oklch(0.86 0.09 82);
+  --gold-deep: oklch(0.55 0.12 65);
+  --ink: oklch(0.08 0.01 60);
+  --cream: oklch(0.96 0.02 80);
+  --background: oklch(0.12 0.012 60);
+  --foreground: oklch(0.96 0.015 80);
+  --gradient-gold: linear-gradient(135deg, oklch(0.86 0.09 82), oklch(0.65 0.14 70));
+  --gradient-overlay: linear-gradient(180deg, oklch(0.08 0.01 60 / 0.2) 0%, oklch(0.08 0.01 60 / 0.85) 100%);
+  --shadow-luxe: 0 40px 100px -20px oklch(0 0 0 / 0.6);
+  --shadow-gold: 0 0 60px oklch(0.78 0.13 78 / 0.35);
+}
+
+@layer base {
+  html, body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .serif {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .script { font-family: "Great Vibes", cursive; }
+  .text-gold { color: var(--gold); }
+  .bg-ink { background-color: var(--ink); }
+  .text-cream { color: var(--cream); }
+}
+
+@layer utilities {
+  .gradient-gold-text {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .overlay-luxe { background: var(--gradient-overlay); }
+  .border-gold { border-color: var(--gold); }
+  .shadow-luxe { box-shadow: var(--shadow-luxe); }
+  .shadow-gold-glow { box-shadow: var(--shadow-gold); }
+}
